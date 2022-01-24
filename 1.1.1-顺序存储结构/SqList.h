@@ -4,6 +4,7 @@
 #define LIST_INCREAMENT 10
 #define bool int
 
+// 声明枚举类型状态函数
 //// 方案一：
 //enum Status
 //{
@@ -20,18 +21,16 @@ typedef enum _status {
 * fail 运行失败
 * fatal 内存分配失败
 * range_error 数据范围越界错误
-*
 */
 
-typedef int ElemType;
+typedef int ElemType; // 或使用宏定义，即 #define ElemType int
 
 typedef struct _sqList
 {
 	ElemType* elem; // 一块连续存储空间的首地址指针
 	int length;     // 线性表的长度（元素个数）
 	int list_size;  // 线性表所分配的存储空间的大小
-} SqList, * Ptr, * SqListPtr;
-//TODO: typedef Ptr* SqListPtr;
+} SqList, * SqListPtr;
 
 Status List_Init(SqListPtr L);
 void List_Destory(SqListPtr L);

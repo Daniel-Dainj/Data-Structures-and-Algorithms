@@ -10,7 +10,7 @@ Status List_Init(SqListPtr L)
 {
 	Status s = fatal;
 	if (L != NULL)
-	{ //TODO：存在逻辑问题：取消对 NULL 指针“L”的引用。——已解决
+	{
 		L->elem = (ElemType*)malloc(sizeof(ElemType) * (LIST_INIT_SIZE + 1));
 		if (L->elem) // 或 if (L->elem != NULL)
 		{
@@ -42,7 +42,7 @@ void List_Destory(SqListPtr L)
 		if (L->elem)
 		{
 			free(L->elem);
-			//void free(void *ptr);
+			//补充函数原型： void free(void *ptr);
 			//释放ptr指向的存储空间。被释放的空间通常被送入可用存储区池，以后可在调用malloc函数来再分配。
 			L->elem = NULL;
 			L->length = 0;
@@ -123,7 +123,7 @@ Status List_Insert(SqListPtr L, int pos, ElemType elem)
 				{
 					L->elem[i + 1] = L->elem[i];
 				}
-				L->elem[pos] = elem; //TODO:该处pos位置存在疑惑！！！是否需要+1？？？
+				L->elem[pos] = elem;
 				L->length++;
 				s = success;
 			}
@@ -142,7 +142,7 @@ Status List_Delete(SqListPtr L, int pos)
 	{
 		if (pos >= 1 && pos <= L->length)
 		{
-			for (int i = pos + 1; i <= L->length; ++i)
+			for (int i = pos + 1; i <= L->length; i++)
 			{
 				L->elem[i - 1] = L->elem[i];
 			}
@@ -178,7 +178,7 @@ Status List_Next(SqListPtr L, int pos, ElemType* elem)
 	{
 		if (pos >= 1 && pos < L->length)//最后一个位置没有后继
 		{
-			*elem = L->elem[pos + 1]; //pos位置的下标为pos-1，后继的下标为pos
+			*elem = L->elem[pos + 1];
 			s = success;
 		}
 	}
@@ -190,7 +190,7 @@ void List_Print(SqListPtr L)
 {
 	if (L)
 	{
-		for (int i = 1; i <= L->length; i++) //TODO:改成++i
+		for (int i = 1; i <= L->length; i++)
 		{
 			printf("%d ", L->elem[i]);
 			if (i % 10 == 0)

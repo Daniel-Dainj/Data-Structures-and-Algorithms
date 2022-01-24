@@ -9,7 +9,7 @@ int main(int argc, char const* argv[])
 	int pos, size;
 	ElemType e, * data;
 	Status s;
-	//TODO: 此处是否还可考虑使用枚举方法输出、自动生成swtch语句。
+	//TODO: 此处是否还可考虑使用枚举方法输出、完成swtch语句的代码自动补全填充。
 	do
 	{
 		printf("程序功能列表：\n");
@@ -159,4 +159,5 @@ int main(int argc, char const* argv[])
 			break;
 		}
 	} while (opt != 6);
+	return 0;
 }
