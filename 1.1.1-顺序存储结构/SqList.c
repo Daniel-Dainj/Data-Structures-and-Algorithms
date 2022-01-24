@@ -4,35 +4,35 @@
 
 // 构建底层基本函数体原型（仓库）
 
-// 初始化、创建线性表
-////方案一：
-//Status List_Init(SqListPtr L)
-//{
-//	Status s = fatal;
-//	if (L == NULL)
-//	{ //TODO：存在逻辑问题：取消对 NULL 指针“L”的引用。
-//		L->elem = (ElemType*)malloc(sizeof(ElemType) * (L->list_size + 1));
-//		if (L->elem) // 或 if (L->elem != NULL)
-//		{
-//			L->list_size = LIST_INIT_SIZE;
-//			L->length = 0;
-//			s = success;
-//		}
-//	}
-//	return s;
-//}
-
-// 方案二：
+//// 初始化、创建线性表
+//方案一：
 Status List_Init(SqListPtr L)
 {
-	Status s = success;
-	L->list_size = LIST_INIT_SIZE;
-	L->length = 0;
-	L->elem = (ElemType*)malloc(sizeof(ElemType) * (LIST_INIT_SIZE + 1));
-	if (L->elem == NULL)
-		s = fatal;
+	Status s = fatal;
+	if (L != NULL)
+	{ //TODO：存在逻辑问题：取消对 NULL 指针“L”的引用。——已解决
+		L->elem = (ElemType*)malloc(sizeof(ElemType) * (LIST_INIT_SIZE + 1));
+		if (L->elem) // 或 if (L->elem != NULL)
+		{
+			L->list_size = LIST_INIT_SIZE;
+			L->length = 0;
+			s = success;
+		}
+	}
 	return s;
 }
+
+//// 方案二：
+//Status List_Init(SqListPtr L)
+//{
+//	Status s = success;
+//	L->list_size = LIST_INIT_SIZE;
+//	L->length = 0;
+//	L->elem = (ElemType*)malloc(sizeof(ElemType) * (LIST_INIT_SIZE + 1));
+//	if (L->elem == NULL)
+//		s = fatal;
+//	return s;
+//}
 
 // 清除线性表（释放空间）
 void List_Destory(SqListPtr L)
@@ -89,12 +89,12 @@ Status List_Retrival(SqListPtr L, int pos, ElemType* elem)
 }
 
 // 定位线性表中的某个值
-Status List_Locate(SqListPtr L, ElemType elem, int* pos)
+Status List_Locate(SqListPtr L, ElemType elem, int* pos) //FIXME!!!
 {
 	Status s = range_error;
 	if (L)
 	{
-		for (int i = 1; i <= L->length; ++i)
+		for (int i = 1; i <= L->length; i++)
 		{
 			if (L->elem[i] == elem)
 			{

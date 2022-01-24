@@ -10,7 +10,7 @@ Status Test_CreateList(SqListPtr list, ElemType data[], int n)
 	{
 		for (int i = 1; i <= n; ++i)
 		{
-			s = List_Init(list, i, data[i]);
+			s = List_Insert(list, i, data[i]);
 			if (s != success)
 			{
 				break;
