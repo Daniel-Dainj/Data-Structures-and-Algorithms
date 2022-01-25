@@ -60,14 +60,7 @@ int main(int argc, char const* argv[])
 			s = Test_CreateList(&list, data, size);
 			if (s == success)
 			{
-				if (!List_Empty(&list))
-				{
-					List_Clear(&list);
-					if (List_Empty(&list))
-					{
-						printf("已清空该线性表。\n");
-					}
-				}
+				s = Test_ClearList(&list);
 			}
 			else
 			{

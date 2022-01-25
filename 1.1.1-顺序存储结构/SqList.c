@@ -199,4 +199,5 @@ void List_Print(SqListPtr L)
 			}
 		}
 	}
+	printf("\n");
 }

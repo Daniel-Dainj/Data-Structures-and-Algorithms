@@ -16,6 +16,7 @@ Status Test_CreateList(SqListPtr list, ElemType data[], int n)
 				break;
 			}
 		}
+		printf("已初始化该线性表（成功建立头节点）。\n");
 		List_Print(list);
 	}
 	return s;
@@ -29,6 +30,7 @@ Status Test_ClearList(SqListPtr list)
 		List_Clear(list);
 		if (List_Empty(list))
 		{
+			printf("已清空该线性表。\n");
 			s = success;
 		}
 	}

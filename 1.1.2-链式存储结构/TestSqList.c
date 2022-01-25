@@ -8,6 +8,7 @@ Status Test_CreateList(SqListPtr list, ElemType data[], int n)
 	s = List_Init(list);
 	if (s == success)
 	{
+		printf("已初始化该线性表（成功建立头节点）。\n");
 		for (int i = 1; i <= n; ++i)
 		{
 			s = List_Insert(list, i, data[i]);
@@ -29,6 +30,7 @@ Status Test_ClearList(SqListPtr list)
 		List_Clear(list);
 		if (List_Empty(list))
 		{
+			printf("已清空该线性表。\n");
 			s = success;
 		}
 	}

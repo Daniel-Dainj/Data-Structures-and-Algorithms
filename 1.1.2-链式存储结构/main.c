@@ -12,7 +12,7 @@ int main(int argc, char const* argv[])
 	//TODO: 此处是否还可考虑使用枚举方法输出、完成swtch语句的代码自动补全填充。
 	do
 	{
-		printf("程序功能列表：\n");
+		printf("*****程序功能列表*****\n");
 		printf("1: 测试建立线性表\n");
 		printf("2: 测试清空线性表\n");
 		printf("3: 测试求某个位置的线性表元素的值及其前驱和后继的值\n");
@@ -60,19 +60,7 @@ int main(int argc, char const* argv[])
 			s = Test_CreateList(&list, data, size);
 			if (s == success)
 			{
-				//if (!List_Empty(&list))
-				//{
-				//	List_Clear(&list);
-				//	if (List_Empty(&list))
-				//	{
-				//		printf("已清空该线性表。\n");
-				//	}
-				//}
 				s = Test_ClearList(&list);
-				if (s = success)
-				{
-					printf("已清空该线性表。\n");
-				}
 			}
 			else
 			{
