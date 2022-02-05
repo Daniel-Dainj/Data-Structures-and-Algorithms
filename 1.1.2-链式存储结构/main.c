@@ -36,7 +36,7 @@ int main(int argc, char const* argv[])
 			{
 				scanf("%d", &data[i]);
 			}
-			s = Test_CreateList(&list, data, size);
+			s = createList(&list, data, size);
 			if (s != success)
 			{
 				printf("建立线性表失败。\n");
@@ -57,7 +57,7 @@ int main(int argc, char const* argv[])
 			{
 				scanf("%d", &data[i]);
 			}
-			s = Test_CreateList(&list, data, size);
+			s = createList(&list, data, size);
 			if (s == success)
 			{
 				s = Test_ClearList(&list);
@@ -82,7 +82,7 @@ int main(int argc, char const* argv[])
 			{
 				scanf("%d", &data[i]);
 			}
-			s = Test_CreateList(&list, data, size);
+			s = createList(&list, data, size);
 			if (s == success)
 			{
 				printf("请输入待查询元素的位置：\n");
@@ -109,7 +109,7 @@ int main(int argc, char const* argv[])
 			{
 				scanf("%d", &data[i]);
 			}
-			s = Test_CreateList(&list, data, size);
+			s = createList(&list, data, size);
 			if (s == success)
 			{
 				printf("请输入待查询元素的值：\n");
@@ -136,7 +136,7 @@ int main(int argc, char const* argv[])
 			{
 				scanf("%d", &data[i]);
 			}
-			s = Test_CreateList(&list, data, size);
+			s = createList(&list, data, size);
 			if (s == success)
 			{
 				Test_Size(&list);

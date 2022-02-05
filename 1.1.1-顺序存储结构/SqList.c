@@ -129,7 +129,7 @@ Status List_Insert(SqListPtr L, int pos, ElemType elem)
 			}
 		}
 		else
-			s = fail;
+			s = error;
 	}
 	return s;
 }
@@ -150,7 +150,7 @@ Status List_Delete(SqListPtr L, int pos)
 			s = success;
 		}
 		else
-			s = fail;
+			s = error;
 	}
 	return s;
 }

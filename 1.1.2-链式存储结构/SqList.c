@@ -7,7 +7,7 @@
 // 初始化、创建线性表
 Status List_Init(SqListPtr L)
 {
-	Status s = fail;
+	Status s = error;
 	Ptr p = NULL;
 	if (*L == NULL)
 	{
@@ -87,7 +87,7 @@ Status List_Retrival(SqListPtr L, int pos, ElemType* elem)
 	}
 	else
 	{
-		s = fail;
+		s = error;
 	}
 	//}
 	return s;
@@ -96,7 +96,7 @@ Status List_Retrival(SqListPtr L, int pos, ElemType* elem)
 // 查询链表中元素的值为elem的位置pos（前提要求：线性表L及p指针所指元素存在）
 Status List_Locate(SqListPtr L, ElemType elem, int* pos)
 {
-	Status s = fail;
+	Status s = error;
 	Ptr p = (*L)->next;
 	int i = 1;
 	while (p)
@@ -119,7 +119,7 @@ Status List_Locate(SqListPtr L, ElemType elem, int* pos)
 //【新增】查询元素位置函数
 Status List_Find(SqListPtr L, int pos, Ptr* pAddr)
 {
-	Status s = fail;
+	Status s = error;
 	Ptr p = (*L)->next, q = (*L);
 	int i = 1;
 	while (p && i < pos)
@@ -139,7 +139,7 @@ Status List_Find(SqListPtr L, int pos, Ptr* pAddr)
 // 在链表中位置为pos处插入新元素（前提要求：线性表L及p指针所指元素存在，且pos位置合法）
 Status List_Insert(SqListPtr L, int pos, ElemType elem)
 {
-	Status s = fail;
+	Status s = error;
 	Ptr p = NULL, q = NULL;
 	if (pos == 1)
 	{
@@ -175,7 +175,7 @@ Status List_Insert(SqListPtr L, int pos, ElemType elem)
 
 Status List_Delete(SqListPtr L, int pos)
 {
-	Status s = fail;
+	Status s = error;
 	Ptr p = NULL, q = NULL;
 	s = List_Find(L, pos - 1, &q);
 	if (s == success)
@@ -197,7 +197,7 @@ Status List_Delete(SqListPtr L, int pos)
 
 Status List_Prior(SqListPtr L, int pos, ElemType* elem)
 {
-	Status s = fail;
+	Status s = error;
 	Ptr q = NULL;
 	s = List_Find(L, pos - 1, &q);
 	if (s == success)
@@ -213,7 +213,7 @@ Status List_Prior(SqListPtr L, int pos, ElemType* elem)
 
 Status List_Next(SqListPtr L, int pos, ElemType* elem)
 {
-	Status s = fail;
+	Status s = error;
 	Ptr p = NULL, q = NULL;
 	s = List_Find(L, pos, &q);
 	if (s == success)

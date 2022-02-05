@@ -13,7 +13,7 @@
 
 // ·½°¸¶þ£º
 typedef enum _status {
-	success, fail, fatal, range_error
+	success, error, fatal, range_error
 } Status;
 
 /*

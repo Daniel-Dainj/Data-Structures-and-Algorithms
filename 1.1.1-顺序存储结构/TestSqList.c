@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include "TestSqList.h"
 
-Status Test_CreateList(SqListPtr list, ElemType data[], int n)
+Status createList(SqListPtr list, ElemType data[], int n)
 {
-	Status s = fail;
+	Status s = error;
 	s = List_Init(list);
 	if (s == success)
 	{
@@ -24,7 +24,7 @@ Status Test_CreateList(SqListPtr list, ElemType data[], int n)
 
 Status Test_ClearList(SqListPtr list)
 {
-	Status s = fail;
+	Status s = error;
 	if (!List_Empty(list))
 	{
 		List_Clear(list);
