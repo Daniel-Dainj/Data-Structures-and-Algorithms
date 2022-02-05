@@ -16,7 +16,7 @@ int main(int argc, char const* argv[])
 	//TODO: 此处是否还可考虑使用枚举方法输出、完成swtch语句的代码自动补全填充。
 	do
 	{
-		system("cls");
+		//system("cls");
 		printf("*****欢迎使用实验室设备信息管理系统，本程序提供以下功能表列******\n");
 		printf("*\t\t1: 新增实验室设备信息\t\t\t\t*\n");
 		printf("*\t\t2: 查询实验室设备信息\t\t\t\t*\n");

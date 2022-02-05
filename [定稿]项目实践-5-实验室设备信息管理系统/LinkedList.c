@@ -282,7 +282,7 @@ void createList(LinkedListPtr pList, LinkedListPtr pt)
 			for (i = 1; i <= n; i++)
 			{
 				printf("第%d种新增设备的编号、名称、价格、数量和总价分别是：\n", i);
-				printf("%s,\t%s,\t%5.2f,\t%5d,\t%5.2f\n", p->data.id, p->data.name, p->data.num, p->data.num, p->data.sumPrice);
+				printf("%s,\t%s,\t%5.2f,\t%5d,\t%5.2f\n", p->data.id, p->data.name, p->data.price, p->data.num, p->data.sumPrice);
 				p = p->next;
 			}
 		}
