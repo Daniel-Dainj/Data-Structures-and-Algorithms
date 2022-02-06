@@ -392,7 +392,10 @@ void SubSort(Ptr head, Ptr tail)
 		{
 			if (j->data.num < pivot)
 			{
-				SwapNode(i, j);
+				if (i->data.num != j->data.num)
+				{
+					SwapNode(i, j);
+				}
 				// track the previous Node of i
 				i_pre = i;
 				i = i->next;
